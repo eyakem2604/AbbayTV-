@@ -264,5 +264,45 @@
             loadJobs(false);
         }
     </script>
+    <script>
+// Immediate hamburger fix
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Testing hamburger menu...');
+    
+    // Create hamburger if it doesn't exist
+    if (!document.querySelector('.hamburger-menu')) {
+        const topBarLeft = document.querySelector('.top-bar-left');
+        if (topBarLeft) {
+            const hamburger = document.createElement('div');
+            hamburger.className = 'hamburger-menu';
+            hamburger.innerHTML = `
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            `;
+            topBarLeft.prepend(hamburger);
+        }
+    }
+    
+    // Simple hamburger functionality
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.hamburger-menu')) {
+            const mobileMenu = document.querySelector('.mobile-menu-overlay');
+            if (mobileMenu) {
+                mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+                document.body.style.overflow = mobileMenu.style.display === 'flex' ? 'hidden' : 'auto';
+            }
+        }
+        
+        if (e.target.closest('.mobile-menu-close')) {
+            const mobileMenu = document.querySelector('.mobile-menu-overlay');
+            if (mobileMenu) {
+                mobileMenu.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    });
+});
+</script>
 </body>
 </html>
