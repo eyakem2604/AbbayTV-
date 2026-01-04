@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="general.css">
-    <link rel="icon" type="image/x-icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
+    <link rel="icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
 </head>
 <body>
     <!-- Top Bar -->
@@ -20,7 +20,7 @@
             </div>
             <div class="search-container">
                 <i class="fas fa-search"></i>
-                <input type="text" id="global-search" placeholder="Search news, programs, jobs...">
+                <input type="text" id="global-search" placeholder="Search...">
             </div>
         </div>
         <div class="top-bar-right">
@@ -77,12 +77,6 @@
                     <span>Contact</span>
                 </a>
             </li>
-            <li class="nav-item admin-link">
-                <a href="admin.html">
-                    <i class="fas fa-lock"></i>
-                    <span>Admin</span>
-                </a>
-            </li>
         </ul>
         
         <div class="sidebar-footer">
@@ -103,7 +97,6 @@
             <li><a href="programs.html"><i class="fas fa-film"></i> Programs</a></li>
             <li><a href="jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
             <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
         </ul>
     </div>
 
@@ -123,14 +116,13 @@
             </div>
         </section>
 
-        <!-- Latest News Section -->
+        <!-- Latest News -->
         <section class="content-section">
             <div class="section-header">
                 <h2><i class="fas fa-newspaper"></i> Latest News</h2>
                 <a href="news.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="cards-grid" id="latest-news">
-                <!-- News cards will be loaded here -->
                 <div class="loading-spinner"></div>
             </div>
         </section>
@@ -142,19 +134,17 @@
                 <a href="programs.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="cards-grid" id="featured-programs">
-                <!-- Program cards will be loaded here -->
                 <div class="loading-spinner"></div>
             </div>
         </section>
 
-        <!-- Job Highlights -->
+        <!-- Job Opportunities -->
         <section class="content-section">
             <div class="section-header">
                 <h2><i class="fas fa-briefcase"></i> Job Opportunities</h2>
                 <a href="jobs.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="cards-grid" id="job-highlights">
-                <!-- Job cards will be loaded here -->
                 <div class="loading-spinner"></div>
             </div>
         </section>
@@ -181,70 +171,13 @@
         </div>
     </div>
 
-    <!-- Job Detail Modal -->
-    <div class="modal-overlay" id="job-modal">
-        <div class="modal-content job-modal">
-            <div class="modal-header">
-                <h3 id="job-modal-title"></h3>
-                <button class="modal-close"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="job-modal-content" id="job-detail-content">
-                    <!-- Job details will be loaded here -->
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="main.js"></script>
     <script>
-        // Load homepage data
         document.addEventListener('DOMContentLoaded', function() {
             loadLatestNews(4);
             loadFeaturedPrograms(4);
             loadJobHighlights(3);
-            loadAnnouncement();
         });
     </script>
-    <script>
-// Immediate hamburger fix
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Testing hamburger menu...');
-    
-    // Create hamburger if it doesn't exist
-    if (!document.querySelector('.hamburger-menu')) {
-        const topBarLeft = document.querySelector('.top-bar-left');
-        if (topBarLeft) {
-            const hamburger = document.createElement('div');
-            hamburger.className = 'hamburger-menu';
-            hamburger.innerHTML = `
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-            `;
-            topBarLeft.prepend(hamburger);
-        }
-    }
-    
-    // Simple hamburger functionality
-    document.addEventListener('click', function(e) {
-        if (e.target.closest('.hamburger-menu')) {
-            const mobileMenu = document.querySelector('.mobile-menu-overlay');
-            if (mobileMenu) {
-                mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-                document.body.style.overflow = mobileMenu.style.display === 'flex' ? 'hidden' : 'auto';
-            }
-        }
-        
-        if (e.target.closest('.mobile-menu-close')) {
-            const mobileMenu = document.querySelector('.mobile-menu-overlay');
-            if (mobileMenu) {
-                mobileMenu.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-    });
-});
-</script>
 </body>
 </html>

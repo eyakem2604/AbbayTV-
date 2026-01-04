@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="general.css">
-    <link rel="icon" type="image/x-icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
+    <link rel="icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
 </head>
 <body>
     <!-- Top Bar -->
@@ -77,12 +77,6 @@
                     <span>Contact</span>
                 </a>
             </li>
-            <li class="nav-item admin-link">
-                <a href="admin.html">
-                    <i class="fas fa-lock"></i>
-                    <span>Admin</span>
-                </a>
-            </li>
         </ul>
         
         <div class="sidebar-footer">
@@ -103,13 +97,11 @@
             <li><a href="programs.html" class="active"><i class="fas fa-film"></i> Programs</a></li>
             <li><a href="jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
             <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
         </ul>
     </div>
 
     <!-- Main Content -->
     <main class="main-content">
-        <!-- Page Header -->
         <div class="page-header">
             <h1><i class="fas fa-film"></i> TV Programs</h1>
             <p>Watch our featured programs and shows</p>
@@ -118,8 +110,8 @@
         <!-- Filter Controls -->
         <div class="filter-section">
             <div class="filter-group">
-                <label for="program-category-filter"><i class="fas fa-filter"></i> Category:</label>
-                <select id="program-category-filter">
+                <label for="category-filter"><i class="fas fa-filter"></i> Category:</label>
+                <select id="category-filter">
                     <option value="">All Categories</option>
                     <option value="Entertainment">Entertainment</option>
                     <option value="Educational">Educational</option>
@@ -127,45 +119,40 @@
                     <option value="Documentary">Documentary</option>
                     <option value="Sports">Sports</option>
                     <option value="Cultural">Cultural</option>
-                    <option value="Talk Show">Talk Show</option>
                 </select>
             </div>
             
             <div class="filter-group">
-                <label for="program-search"><i class="fas fa-search"></i> Search:</label>
-                <input type="text" id="program-search" placeholder="Search program titles...">
+                <label for="search-input"><i class="fas fa-search"></i> Search:</label>
+                <input type="text" id="search-input" placeholder="Search programs...">
             </div>
             
             <div class="filter-group">
-                <label for="program-sort"><i class="fas fa-sort"></i> Sort by:</label>
-                <select id="program-sort">
+                <label for="sort-filter"><i class="fas fa-sort"></i> Sort by:</label>
+                <select id="sort-filter">
                     <option value="date_desc">Latest First</option>
                     <option value="date_asc">Oldest First</option>
                     <option value="title_asc">Title A-Z</option>
-                    <option value="title_desc">Title Z-A</option>
                 </select>
             </div>
             
-            <button id="apply-program-filters" class="btn btn-primary">
-                <i class="fas fa-check"></i> Apply Filters
+            <button id="apply-filters" class="btn btn-primary">
+                <i class="fas fa-check"></i> Apply
             </button>
-            <button id="reset-program-filters" class="btn btn-outline">
+            <button id="reset-filters" class="btn btn-outline">
                 <i class="fas fa-redo"></i> Reset
             </button>
         </div>
 
         <!-- Programs Grid -->
-        <div class="content-grid">
-            <div class="cards-grid" id="programs-grid">
-                <!-- Program cards will be loaded here -->
-                <div class="loading-spinner"></div>
-            </div>
+        <div class="cards-grid" id="programs-grid">
+            <div class="loading-spinner"></div>
         </div>
 
-        <!-- Load More Button -->
+        <!-- Load More -->
         <div class="load-more-container">
-            <button id="load-more-programs" class="btn btn-outline">
-                <i class="fas fa-plus"></i> Load More Programs
+            <button id="load-more" class="btn btn-outline">
+                <i class="fas fa-plus"></i> Load More
             </button>
         </div>
     </main>
@@ -193,80 +180,19 @@
 
     <script src="main.js"></script>
     <script>
-        // Load programs data
         document.addEventListener('DOMContentLoaded', function() {
             loadPrograms();
-            loadAnnouncement();
             
-            // Set up filter event listeners
-            document.getElementById('apply-program-filters').addEventListener('click', loadPrograms);
-            document.getElementById('reset-program-filters').addEventListener('click', function() {
-                document.getElementById('program-category-filter').value = '';
-                document.getElementById('program-search').value = '';
-                document.getElementById('program-sort').value = 'date_desc';
+            document.getElementById('apply-filters').addEventListener('click', loadPrograms);
+            document.getElementById('reset-filters').addEventListener('click', function() {
+                document.getElementById('category-filter').value = '';
+                document.getElementById('search-input').value = '';
+                document.getElementById('sort-filter').value = 'date_desc';
                 loadPrograms();
             });
             
-            document.getElementById('load-more-programs').addEventListener('click', loadMorePrograms);
-            
-            // Live search
-            document.getElementById('program-search').addEventListener('input', debounce(function() {
-                loadPrograms();
-            }, 500));
+            document.getElementById('load-more').addEventListener('click', loadMorePrograms);
         });
-        
-        let programsPage = 1;
-        const programsPerPage = 12;
-        
-        function loadPrograms(resetPage = true) {
-            if (resetPage) programsPage = 1;
-            // Function implementation in main.js
-        }
-        
-        function loadMorePrograms() {
-            programsPage++;
-            loadPrograms(false);
-        }
     </script>
-    <script>
-// Immediate hamburger fix
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Testing hamburger menu...');
-    
-    // Create hamburger if it doesn't exist
-    if (!document.querySelector('.hamburger-menu')) {
-        const topBarLeft = document.querySelector('.top-bar-left');
-        if (topBarLeft) {
-            const hamburger = document.createElement('div');
-            hamburger.className = 'hamburger-menu';
-            hamburger.innerHTML = `
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-            `;
-            topBarLeft.prepend(hamburger);
-        }
-    }
-    
-    // Simple hamburger functionality
-    document.addEventListener('click', function(e) {
-        if (e.target.closest('.hamburger-menu')) {
-            const mobileMenu = document.querySelector('.mobile-menu-overlay');
-            if (mobileMenu) {
-                mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-                document.body.style.overflow = mobileMenu.style.display === 'flex' ? 'hidden' : 'auto';
-            }
-        }
-        
-        if (e.target.closest('.mobile-menu-close')) {
-            const mobileMenu = document.querySelector('.mobile-menu-overlay');
-            if (mobileMenu) {
-                mobileMenu.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-    });
-});
-</script>
 </body>
 </html>

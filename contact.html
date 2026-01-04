@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="general.css">
-    <link rel="icon" type="image/x-icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
+    <link rel="icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
 </head>
 <body>
     <!-- Top Bar -->
@@ -77,12 +77,6 @@
                     <span>Contact</span>
                 </a>
             </li>
-            <li class="nav-item admin-link">
-                <a href="admin.html">
-                    <i class="fas fa-lock"></i>
-                    <span>Admin</span>
-                </a>
-            </li>
         </ul>
         
         <div class="sidebar-footer">
@@ -103,13 +97,11 @@
             <li><a href="programs.html"><i class="fas fa-film"></i> Programs</a></li>
             <li><a href="jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
             <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
         </ul>
     </div>
 
     <!-- Main Content -->
     <main class="main-content">
-        <!-- Page Header -->
         <div class="page-header">
             <h1><i class="fas fa-envelope"></i> Contact Us</h1>
             <p>Get in touch with Abbay TV Ethiopia</p>
@@ -194,7 +186,7 @@
                     </button>
                 </form>
                 
-                <!-- Success Message (hidden by default) -->
+                <!-- Success Message -->
                 <div id="success-message" class="success-message" style="display: none;">
                     <div class="success-icon">
                         <i class="fas fa-check-circle"></i>
@@ -217,66 +209,26 @@
 
     <script src="main.js"></script>
     <script>
-        // Load announcement
         document.addEventListener('DOMContentLoaded', function() {
-            loadAnnouncement();
-            
-            // Set up contact form
-            const contactForm = document.getElementById('contact-form');
+            const form = document.getElementById('contact-form');
             const successMessage = document.getElementById('success-message');
             const sendAnotherBtn = document.getElementById('send-another');
             
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                await submitContactForm();
-            });
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    submitContactForm();
+                });
+            }
             
-            sendAnotherBtn.addEventListener('click', function() {
-                successMessage.style.display = 'none';
-                contactForm.style.display = 'block';
-                contactForm.reset();
-            });
+            if (sendAnotherBtn) {
+                sendAnotherBtn.addEventListener('click', function() {
+                    successMessage.style.display = 'none';
+                    form.style.display = 'block';
+                    form.reset();
+                });
+            }
         });
     </script>
-    <script>
-// Immediate hamburger fix
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Testing hamburger menu...');
-    
-    // Create hamburger if it doesn't exist
-    if (!document.querySelector('.hamburger-menu')) {
-        const topBarLeft = document.querySelector('.top-bar-left');
-        if (topBarLeft) {
-            const hamburger = document.createElement('div');
-            hamburger.className = 'hamburger-menu';
-            hamburger.innerHTML = `
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-            `;
-            topBarLeft.prepend(hamburger);
-        }
-    }
-    
-    // Simple hamburger functionality
-    document.addEventListener('click', function(e) {
-        if (e.target.closest('.hamburger-menu')) {
-            const mobileMenu = document.querySelector('.mobile-menu-overlay');
-            if (mobileMenu) {
-                mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-                document.body.style.overflow = mobileMenu.style.display === 'flex' ? 'hidden' : 'auto';
-            }
-        }
-        
-        if (e.target.closest('.mobile-menu-close')) {
-            const mobileMenu = document.querySelector('.mobile-menu-overlay');
-            if (mobileMenu) {
-                mobileMenu.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-    });
-});
-</script>
 </body>
 </html>

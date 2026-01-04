@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="general.css">
-    <link rel="icon" type="image/x-icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
+    <link rel="icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
 </head>
 <body>
     <!-- Top Bar -->
@@ -77,12 +77,6 @@
                     <span>Contact</span>
                 </a>
             </li>
-            <li class="nav-item admin-link">
-                <a href="admin.html">
-                    <i class="fas fa-lock"></i>
-                    <span>Admin</span>
-                </a>
-            </li>
         </ul>
         
         <div class="sidebar-footer">
@@ -103,13 +97,11 @@
             <li><a href="programs.html"><i class="fas fa-film"></i> Programs</a></li>
             <li><a href="jobs.html" class="active"><i class="fas fa-briefcase"></i> Jobs</a></li>
             <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
         </ul>
     </div>
 
     <!-- Main Content -->
     <main class="main-content">
-        <!-- Page Header -->
         <div class="page-header">
             <h1><i class="fas fa-briefcase"></i> Job Opportunities</h1>
             <p>Find your next career opportunity in media and broadcasting</p>
@@ -118,8 +110,8 @@
         <!-- Filter Controls -->
         <div class="filter-section">
             <div class="filter-group">
-                <label for="job-category-filter"><i class="fas fa-filter"></i> Category:</label>
-                <select id="job-category-filter">
+                <label for="category-filter"><i class="fas fa-filter"></i> Category:</label>
+                <select id="category-filter">
                     <option value="">All Categories</option>
                     <option value="Technology">Technology</option>
                     <option value="Media">Media</option>
@@ -127,13 +119,12 @@
                     <option value="Production">Production</option>
                     <option value="Marketing">Marketing</option>
                     <option value="Administration">Administration</option>
-                    <option value="Sales">Sales</option>
                 </select>
             </div>
             
             <div class="filter-group">
-                <label for="job-type-filter"><i class="fas fa-briefcase"></i> Job Type:</label>
-                <select id="job-type-filter">
+                <label for="type-filter"><i class="fas fa-briefcase"></i> Job Type:</label>
+                <select id="type-filter">
                     <option value="">All Types</option>
                     <option value="Full-time">Full-time</option>
                     <option value="Part-time">Part-time</option>
@@ -148,18 +139,17 @@
             </div>
             
             <div class="filter-group">
-                <label for="job-sort"><i class="fas fa-sort"></i> Sort by:</label>
-                <select id="job-sort">
+                <label for="sort-filter"><i class="fas fa-sort"></i> Sort by:</label>
+                <select id="sort-filter">
                     <option value="date_desc">Latest First</option>
                     <option value="deadline_asc">Deadline (Soonest)</option>
-                    <option value="title_asc">Title A-Z</option>
                 </select>
             </div>
             
-            <button id="apply-job-filters" class="btn btn-primary">
-                <i class="fas fa-check"></i> Apply Filters
+            <button id="apply-filters" class="btn btn-primary">
+                <i class="fas fa-check"></i> Apply
             </button>
-            <button id="reset-job-filters" class="btn btn-outline">
+            <button id="reset-filters" class="btn btn-outline">
                 <i class="fas fa-redo"></i> Reset
             </button>
         </div>
@@ -190,17 +180,14 @@
         </div>
 
         <!-- Jobs Grid -->
-        <div class="content-grid">
-            <div class="cards-grid" id="jobs-grid">
-                <!-- Job cards will be loaded here -->
-                <div class="loading-spinner"></div>
-            </div>
+        <div class="cards-grid" id="jobs-grid">
+            <div class="loading-spinner"></div>
         </div>
 
-        <!-- Load More Button -->
+        <!-- Load More -->
         <div class="load-more-container">
-            <button id="load-more-jobs" class="btn btn-outline">
-                <i class="fas fa-plus"></i> Load More Jobs
+            <button id="load-more" class="btn btn-outline">
+                <i class="fas fa-plus"></i> Load More
             </button>
         </div>
     </main>
@@ -220,7 +207,7 @@
             </div>
             <div class="modal-body">
                 <div class="job-modal-content" id="job-detail-content">
-                    <!-- Job details will be loaded here -->
+                    <!-- Job details loaded here -->
                 </div>
             </div>
         </div>
@@ -228,81 +215,20 @@
 
     <script src="main.js"></script>
     <script>
-        // Load jobs data
         document.addEventListener('DOMContentLoaded', function() {
             loadJobs();
-            loadAnnouncement();
             
-            // Set up filter event listeners
-            document.getElementById('apply-job-filters').addEventListener('click', loadJobs);
-            document.getElementById('reset-job-filters').addEventListener('click', function() {
-                document.getElementById('job-category-filter').value = '';
-                document.getElementById('job-type-filter').value = '';
+            document.getElementById('apply-filters').addEventListener('click', loadJobs);
+            document.getElementById('reset-filters').addEventListener('click', function() {
+                document.getElementById('category-filter').value = '';
+                document.getElementById('type-filter').value = '';
                 document.getElementById('location-filter').value = '';
-                document.getElementById('job-sort').value = 'date_desc';
+                document.getElementById('sort-filter').value = 'date_desc';
                 loadJobs();
             });
             
-            document.getElementById('load-more-jobs').addEventListener('click', loadMoreJobs);
-            
-            // Live search for location
-            document.getElementById('location-filter').addEventListener('input', debounce(function() {
-                loadJobs();
-            }, 500));
+            document.getElementById('load-more').addEventListener('click', loadMoreJobs);
         });
-        
-        let jobsPage = 1;
-        const jobsPerPage = 12;
-        
-        function loadJobs(resetPage = true) {
-            if (resetPage) jobsPage = 1;
-            // Function implementation in main.js
-        }
-        
-        function loadMoreJobs() {
-            jobsPage++;
-            loadJobs(false);
-        }
     </script>
-    <script>
-// Immediate hamburger fix
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Testing hamburger menu...');
-    
-    // Create hamburger if it doesn't exist
-    if (!document.querySelector('.hamburger-menu')) {
-        const topBarLeft = document.querySelector('.top-bar-left');
-        if (topBarLeft) {
-            const hamburger = document.createElement('div');
-            hamburger.className = 'hamburger-menu';
-            hamburger.innerHTML = `
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-            `;
-            topBarLeft.prepend(hamburger);
-        }
-    }
-    
-    // Simple hamburger functionality
-    document.addEventListener('click', function(e) {
-        if (e.target.closest('.hamburger-menu')) {
-            const mobileMenu = document.querySelector('.mobile-menu-overlay');
-            if (mobileMenu) {
-                mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-                document.body.style.overflow = mobileMenu.style.display === 'flex' ? 'hidden' : 'auto';
-            }
-        }
-        
-        if (e.target.closest('.mobile-menu-close')) {
-            const mobileMenu = document.querySelector('.mobile-menu-overlay');
-            if (mobileMenu) {
-                mobileMenu.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-    });
-});
-</script>
 </body>
 </html>
