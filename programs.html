@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs - Abbay TV Ethiopia</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="general.css">
+    <link rel="icon" type="image/x-icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <div class="hamburger-menu">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="global-search" placeholder="Search programs...">
+            </div>
+        </div>
+        <div class="top-bar-right">
+            <div class="admin-announcement">
+                <i class="fas fa-bullhorn"></i>
+                <span id="announcement-text">Welcome to Abbay TV Ethiopia</span>
+            </div>
+            <img src="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png" alt="Abbay TV Logo" class="top-logo">
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo-section">
+            <img src="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png" alt="Abbay TV Logo" class="logo">
+            <h1>Abbay TV</h1>
+            <p>Ethiopia</p>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="live.html">
+                    <i class="fas fa-tv"></i>
+                    <span>Live</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="news.html">
+                    <i class="fas fa-newspaper"></i>
+                    <span>News</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a href="programs.html">
+                    <i class="fas fa-film"></i>
+                    <span>Programs</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="jobs.html">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Jobs</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="contact.html">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li class="nav-item admin-link">
+                <a href="admin.html">
+                    <i class="fas fa-lock"></i>
+                    <span>Admin</span>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <p>© 2024 Abbay TV Ethiopia</p>
+            <p>All rights reserved</p>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="live.html"><i class="fas fa-tv"></i> Live</a></li>
+            <li><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
+            <li><a href="programs.html" class="active"><i class="fas fa-film"></i> Programs</a></li>
+            <li><a href="jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1><i class="fas fa-film"></i> TV Programs</h1>
+            <p>Watch our featured programs and shows</p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-section">
+            <div class="filter-group">
+                <label for="program-category-filter"><i class="fas fa-filter"></i> Category:</label>
+                <select id="program-category-filter">
+                    <option value="">All Categories</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Educational">Educational</option>
+                    <option value="News">News</option>
+                    <option value="Documentary">Documentary</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Cultural">Cultural</option>
+                    <option value="Talk Show">Talk Show</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="program-search"><i class="fas fa-search"></i> Search:</label>
+                <input type="text" id="program-search" placeholder="Search program titles...">
+            </div>
+            
+            <div class="filter-group">
+                <label for="program-sort"><i class="fas fa-sort"></i> Sort by:</label>
+                <select id="program-sort">
+                    <option value="date_desc">Latest First</option>
+                    <option value="date_asc">Oldest First</option>
+                    <option value="title_asc">Title A-Z</option>
+                    <option value="title_desc">Title Z-A</option>
+                </select>
+            </div>
+            
+            <button id="apply-program-filters" class="btn btn-primary">
+                <i class="fas fa-check"></i> Apply Filters
+            </button>
+            <button id="reset-program-filters" class="btn btn-outline">
+                <i class="fas fa-redo"></i> Reset
+            </button>
+        </div>
+
+        <!-- Programs Grid -->
+        <div class="content-grid">
+            <div class="cards-grid" id="programs-grid">
+                <!-- Program cards will be loaded here -->
+                <div class="loading-spinner"></div>
+            </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-container">
+            <button id="load-more-programs" class="btn btn-outline">
+                <i class="fas fa-plus"></i> Load More Programs
+            </button>
+        </div>
+    </main>
+
+    <!-- Floating Contact Button -->
+    <a href="contact.html" class="floating-contact-btn">
+        <i class="fas fa-envelope"></i>
+        <span>Contact Us</span>
+    </a>
+
+    <!-- Video Modal -->
+    <div class="modal-overlay" id="video-modal">
+        <div class="modal-content video-modal">
+            <div class="modal-header">
+                <h3 id="video-title"></h3>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="video-container">
+                    <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // Load programs data
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPrograms();
+            loadAnnouncement();
+            
+            // Set up filter event listeners
+            document.getElementById('apply-program-filters').addEventListener('click', loadPrograms);
+            document.getElementById('reset-program-filters').addEventListener('click', function() {
+                document.getElementById('program-category-filter').value = '';
+                document.getElementById('program-search').value = '';
+                document.getElementById('program-sort').value = 'date_desc';
+                loadPrograms();
+            });
+            
+            document.getElementById('load-more-programs').addEventListener('click', loadMorePrograms);
+            
+            // Live search
+            document.getElementById('program-search').addEventListener('input', debounce(function() {
+                loadPrograms();
+            }, 500));
+        });
+        
+        let programsPage = 1;
+        const programsPerPage = 12;
+        
+        function loadPrograms(resetPage = true) {
+            if (resetPage) programsPage = 1;
+            // Function implementation in main.js
+        }
+        
+        function loadMorePrograms() {
+            programsPage++;
+            loadPrograms(false);
+        }
+    </script>
+</body>
+</html>

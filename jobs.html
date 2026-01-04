@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Opportunities - Abbay TV Ethiopia</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="general.css">
+    <link rel="icon" type="image/x-icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <div class="hamburger-menu">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="global-search" placeholder="Search jobs...">
+            </div>
+        </div>
+        <div class="top-bar-right">
+            <div class="admin-announcement">
+                <i class="fas fa-bullhorn"></i>
+                <span id="announcement-text">Welcome to Abbay TV Ethiopia</span>
+            </div>
+            <img src="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png" alt="Abbay TV Logo" class="top-logo">
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo-section">
+            <img src="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png" alt="Abbay TV Logo" class="logo">
+            <h1>Abbay TV</h1>
+            <p>Ethiopia</p>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="live.html">
+                    <i class="fas fa-tv"></i>
+                    <span>Live</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="news.html">
+                    <i class="fas fa-newspaper"></i>
+                    <span>News</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="programs.html">
+                    <i class="fas fa-film"></i>
+                    <span>Programs</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a href="jobs.html">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Jobs</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="contact.html">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li class="nav-item admin-link">
+                <a href="admin.html">
+                    <i class="fas fa-lock"></i>
+                    <span>Admin</span>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <p>© 2024 Abbay TV Ethiopia</p>
+            <p>All rights reserved</p>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="live.html"><i class="fas fa-tv"></i> Live</a></li>
+            <li><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
+            <li><a href="programs.html"><i class="fas fa-film"></i> Programs</a></li>
+            <li><a href="jobs.html" class="active"><i class="fas fa-briefcase"></i> Jobs</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1><i class="fas fa-briefcase"></i> Job Opportunities</h1>
+            <p>Find your next career opportunity in media and broadcasting</p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-section">
+            <div class="filter-group">
+                <label for="job-category-filter"><i class="fas fa-filter"></i> Category:</label>
+                <select id="job-category-filter">
+                    <option value="">All Categories</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Media">Media</option>
+                    <option value="Journalism">Journalism</option>
+                    <option value="Production">Production</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Administration">Administration</option>
+                    <option value="Sales">Sales</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="job-type-filter"><i class="fas fa-briefcase"></i> Job Type:</label>
+                <select id="job-type-filter">
+                    <option value="">All Types</option>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Contract">Contract</option>
+                    <option value="Remote">Remote</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="location-filter"><i class="fas fa-map-marker-alt"></i> Location:</label>
+                <input type="text" id="location-filter" placeholder="City or Region">
+            </div>
+            
+            <div class="filter-group">
+                <label for="job-sort"><i class="fas fa-sort"></i> Sort by:</label>
+                <select id="job-sort">
+                    <option value="date_desc">Latest First</option>
+                    <option value="deadline_asc">Deadline (Soonest)</option>
+                    <option value="title_asc">Title A-Z</option>
+                </select>
+            </div>
+            
+            <button id="apply-job-filters" class="btn btn-primary">
+                <i class="fas fa-check"></i> Apply Filters
+            </button>
+            <button id="reset-job-filters" class="btn btn-outline">
+                <i class="fas fa-redo"></i> Reset
+            </button>
+        </div>
+
+        <!-- Job Statistics -->
+        <div class="job-statistics">
+            <div class="stat-card">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                    <h3 id="total-jobs">0</h3>
+                    <p>Total Jobs</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <h3 id="urgent-jobs">0</h3>
+                    <p>Urgent Deadline</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h3 id="locations-count">0</h3>
+                    <p>Locations</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jobs Grid -->
+        <div class="content-grid">
+            <div class="cards-grid" id="jobs-grid">
+                <!-- Job cards will be loaded here -->
+                <div class="loading-spinner"></div>
+            </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-container">
+            <button id="load-more-jobs" class="btn btn-outline">
+                <i class="fas fa-plus"></i> Load More Jobs
+            </button>
+        </div>
+    </main>
+
+    <!-- Floating Contact Button -->
+    <a href="contact.html" class="floating-contact-btn">
+        <i class="fas fa-envelope"></i>
+        <span>Contact Us</span>
+    </a>
+
+    <!-- Job Detail Modal -->
+    <div class="modal-overlay" id="job-modal">
+        <div class="modal-content job-modal">
+            <div class="modal-header">
+                <h3 id="job-modal-title"></h3>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="job-modal-content" id="job-detail-content">
+                    <!-- Job details will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // Load jobs data
+        document.addEventListener('DOMContentLoaded', function() {
+            loadJobs();
+            loadAnnouncement();
+            
+            // Set up filter event listeners
+            document.getElementById('apply-job-filters').addEventListener('click', loadJobs);
+            document.getElementById('reset-job-filters').addEventListener('click', function() {
+                document.getElementById('job-category-filter').value = '';
+                document.getElementById('job-type-filter').value = '';
+                document.getElementById('location-filter').value = '';
+                document.getElementById('job-sort').value = 'date_desc';
+                loadJobs();
+            });
+            
+            document.getElementById('load-more-jobs').addEventListener('click', loadMoreJobs);
+            
+            // Live search for location
+            document.getElementById('location-filter').addEventListener('input', debounce(function() {
+                loadJobs();
+            }, 500));
+        });
+        
+        let jobsPage = 1;
+        const jobsPerPage = 12;
+        
+        function loadJobs(resetPage = true) {
+            if (resetPage) jobsPage = 1;
+            // Function implementation in main.js
+        }
+        
+        function loadMoreJobs() {
+            jobsPage++;
+            loadJobs(false);
+        }
+    </script>
+</body>
+</html>

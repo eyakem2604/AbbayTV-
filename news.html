@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - Abbay TV Ethiopia</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="general.css">
+    <link rel="icon" type="image/x-icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <div class="hamburger-menu">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="global-search" placeholder="Search news...">
+            </div>
+        </div>
+        <div class="top-bar-right">
+            <div class="admin-announcement">
+                <i class="fas fa-bullhorn"></i>
+                <span id="announcement-text">Welcome to Abbay TV Ethiopia</span>
+            </div>
+            <img src="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png" alt="Abbay TV Logo" class="top-logo">
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo-section">
+            <img src="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png" alt="Abbay TV Logo" class="logo">
+            <h1>Abbay TV</h1>
+            <p>Ethiopia</p>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="live.html">
+                    <i class="fas fa-tv"></i>
+                    <span>Live</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a href="news.html">
+                    <i class="fas fa-newspaper"></i>
+                    <span>News</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="programs.html">
+                    <i class="fas fa-film"></i>
+                    <span>Programs</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="jobs.html">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Jobs</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="contact.html">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li class="nav-item admin-link">
+                <a href="admin.html">
+                    <i class="fas fa-lock"></i>
+                    <span>Admin</span>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <p>© 2024 Abbay TV Ethiopia</p>
+            <p>All rights reserved</p>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="live.html"><i class="fas fa-tv"></i> Live</a></li>
+            <li><a href="news.html" class="active"><i class="fas fa-newspaper"></i> News</a></li>
+            <li><a href="programs.html"><i class="fas fa-film"></i> Programs</a></li>
+            <li><a href="jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1><i class="fas fa-newspaper"></i> News</h1>
+            <p>Latest news and updates from Ethiopia and around the world</p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-section">
+            <div class="filter-group">
+                <label for="category-filter"><i class="fas fa-filter"></i> Category:</label>
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                    <option value="Politics">Politics</option>
+                    <option value="Business">Business</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Health">Health</option>
+                    <option value="Education">Education</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="section-filter"><i class="fas fa-layer-group"></i> Section:</label>
+                <select id="section-filter">
+                    <option value="">All Sections</option>
+                    <option value="National">National</option>
+                    <option value="International">International</option>
+                    <option value="Regional">Regional</option>
+                    <option value="Local">Local</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="sort-filter"><i class="fas fa-sort"></i> Sort by:</label>
+                <select id="sort-filter">
+                    <option value="date_desc">Latest First</option>
+                    <option value="date_asc">Oldest First</option>
+                    <option value="title_asc">Title A-Z</option>
+                    <option value="title_desc">Title Z-A</option>
+                </select>
+            </div>
+            
+            <button id="apply-filters" class="btn btn-primary">
+                <i class="fas fa-check"></i> Apply Filters
+            </button>
+            <button id="reset-filters" class="btn btn-outline">
+                <i class="fas fa-redo"></i> Reset
+            </button>
+        </div>
+
+        <!-- News Grid -->
+        <div class="content-grid">
+            <div class="cards-grid" id="news-grid">
+                <!-- News cards will be loaded here -->
+                <div class="loading-spinner"></div>
+            </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-container">
+            <button id="load-more-news" class="btn btn-outline">
+                <i class="fas fa-plus"></i> Load More News
+            </button>
+        </div>
+    </main>
+
+    <!-- Floating Contact Button -->
+    <a href="contact.html" class="floating-contact-btn">
+        <i class="fas fa-envelope"></i>
+        <span>Contact Us</span>
+    </a>
+
+    <!-- Video Modal -->
+    <div class="modal-overlay" id="video-modal">
+        <div class="modal-content video-modal">
+            <div class="modal-header">
+                <h3 id="video-title"></h3>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="video-container">
+                    <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // Load news data
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNews();
+            loadAnnouncement();
+            
+            // Set up filter event listeners
+            document.getElementById('apply-filters').addEventListener('click', loadNews);
+            document.getElementById('reset-filters').addEventListener('click', function() {
+                document.getElementById('category-filter').value = '';
+                document.getElementById('section-filter').value = '';
+                document.getElementById('sort-filter').value = 'date_desc';
+                loadNews();
+            });
+            
+            document.getElementById('load-more-news').addEventListener('click', loadMoreNews);
+        });
+        
+        let newsPage = 1;
+        const newsPerPage = 12;
+        
+        function loadNews(resetPage = true) {
+            if (resetPage) newsPage = 1;
+            // Function implementation in main.js
+        }
+        
+        function loadMoreNews() {
+            newsPage++;
+            loadNews(false);
+        }
+    </script>
+</body>
+</html>

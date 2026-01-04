@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Stream - Abbay TV Ethiopia</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="general.css">
+    <link rel="icon" type="image/x-icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <div class="hamburger-menu">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="global-search" placeholder="Search live streams...">
+            </div>
+        </div>
+        <div class="top-bar-right">
+            <div class="admin-announcement">
+                <i class="fas fa-bullhorn"></i>
+                <span id="announcement-text">Welcome to Abbay TV Ethiopia</span>
+            </div>
+            <img src="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png" alt="Abbay TV Logo" class="top-logo">
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo-section">
+            <img src="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png" alt="Abbay TV Logo" class="logo">
+            <h1>Abbay TV</h1>
+            <p>Ethiopia</p>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a href="live.html">
+                    <i class="fas fa-tv"></i>
+                    <span>Live</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="news.html">
+                    <i class="fas fa-newspaper"></i>
+                    <span>News</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="programs.html">
+                    <i class="fas fa-film"></i>
+                    <span>Programs</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="jobs.html">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Jobs</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="contact.html">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li class="nav-item admin-link">
+                <a href="admin.html">
+                    <i class="fas fa-lock"></i>
+                    <span>Admin</span>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <p>© 2024 Abbay TV Ethiopia</p>
+            <p>All rights reserved</p>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="live.html" class="active"><i class="fas fa-tv"></i> Live</a></li>
+            <li><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
+            <li><a href="programs.html"><i class="fas fa-film"></i> Programs</a></li>
+            <li><a href="jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1><i class="fas fa-tv"></i> Live Stream</h1>
+            <p>Watch our live broadcasts and recorded live sessions</p>
+        </div>
+
+        <!-- Main Live Stream Section -->
+        <section class="live-stream-section">
+            <div class="live-player-container">
+                <h2>Now Streaming Live</h2>
+                <div class="live-player">
+                    <div class="video-container">
+                        <iframe id="main-live-player" width="100%" height="100%" src="https://www.youtube.com/embed/live_stream?channel=UC_YOUR_CHANNEL_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="live-player-info">
+                        <h3 id="current-live-title">Abbay TV Live Broadcast</h3>
+                        <p id="current-live-description">Watch our 24/7 live broadcast from Ethiopia</p>
+                        <div class="live-stats">
+                            <span><i class="fas fa-eye"></i> <span id="viewer-count">2.5K</span> watching</span>
+                            <span><i class="fas fa-clock"></i> Live Now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Past Live Streams -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-history"></i> Past Live Streams</h2>
+                <div class="sort-controls">
+                    <label for="live-sort">Sort by:</label>
+                    <select id="live-sort">
+                        <option value="date_desc">Latest First</option>
+                        <option value="date_asc">Oldest First</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="filter-section">
+                <div class="filter-group">
+                    <label for="live-search"><i class="fas fa-search"></i> Search:</label>
+                    <input type="text" id="live-search" placeholder="Search live streams...">
+                </div>
+                
+                <button id="apply-live-filters" class="btn btn-primary">
+                    <i class="fas fa-check"></i> Apply Filters
+                </button>
+                <button id="reset-live-filters" class="btn btn-outline">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+            </div>
+
+            <!-- Live Streams Grid -->
+            <div class="content-grid">
+                <div class="cards-grid" id="live-streams-grid">
+                    <!-- Live stream cards will be loaded here -->
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button id="load-more-live" class="btn btn-outline">
+                    <i class="fas fa-plus"></i> Load More Streams
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Contact Button -->
+    <a href="contact.html" class="floating-contact-btn">
+        <i class="fas fa-envelope"></i>
+        <span>Contact Us</span>
+    </a>
+
+    <!-- Video Modal -->
+    <div class="modal-overlay" id="video-modal">
+        <div class="modal-content video-modal">
+            <div class="modal-header">
+                <h3 id="video-title"></h3>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="video-container">
+                    <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // Load live streams data
+        document.addEventListener('DOMContentLoaded', function() {
+            loadLiveStreams();
+            loadAnnouncement();
+            
+            // Set up filter event listeners
+            document.getElementById('apply-live-filters').addEventListener('click', loadLiveStreams);
+            document.getElementById('reset-live-filters').addEventListener('click', function() {
+                document.getElementById('live-search').value = '';
+                document.getElementById('live-sort').value = 'date_desc';
+                loadLiveStreams();
+            });
+            
+            document.getElementById('load-more-live').addEventListener('click', loadMoreLiveStreams);
+            
+            // Live search
+            document.getElementById('live-search').addEventListener('input', debounce(function() {
+                loadLiveStreams();
+            }, 500));
+            
+            // Sort change
+            document.getElementById('live-sort').addEventListener('change', loadLiveStreams);
+        });
+        
+        let livePage = 1;
+        const livePerPage = 9;
+        
+        function loadLiveStreams(resetPage = true) {
+            if (resetPage) livePage = 1;
+            // Function implementation in main.js
+        }
+        
+        function loadMoreLiveStreams() {
+            livePage++;
+            loadLiveStreams(false);
+        }
+    </script>
+</body>
+</html>
