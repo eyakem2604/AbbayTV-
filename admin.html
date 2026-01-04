@@ -8,225 +8,301 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="general.css">
     <link rel="icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
-    <style>
-        /* Admin-specific styles */
-        .login-screen {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-            padding: 20px;
-        }
-        
-        .login-container {
-            background: var(--dark-gray);
-            padding: 40px;
-            border-radius: 15px;
-            width: 100%;
-            max-width: 500px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-        
-        .login-logo {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 20px;
-            display: block;
-            animation: logoFloat 3s ease-in-out infinite;
-        }
-        
-        .login-form {
-            margin-top: 30px;
-        }
-        
-        .admin-dashboard {
-            display: none;
-        }
-    </style>
 </head>
 <body>
     <!-- Login Screen -->
-    <div id="login-screen" class="login-screen">
+    <div id="login-screen">
         <div class="login-container">
             <div class="login-header">
                 <img src="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png" alt="Abbay TV Logo" class="login-logo">
-                <h1 style="text-align: center; color: #d4af37; margin-bottom: 10px;">Admin Dashboard</h1>
-                <p style="text-align: center; color: #999; margin-bottom: 30px;">Login to access the admin panel</p>
+                <h1>Admin Dashboard</h1>
+                <p>Login to access the admin panel</p>
             </div>
             
             <form id="login-form" class="login-form">
                 <div class="form-group">
                     <label for="admin-email">Email Address</label>
-                    <input type="email" id="admin-email" class="form-control" required>
+                    <input type="email" id="admin-email" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="admin-password">Password</label>
-                    <input type="password" id="admin-password" class="form-control" required>
+                    <input type="password" id="admin-password" required>
                 </div>
                 
-                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; margin-top: 20px;">
+                <button type="submit" class="btn btn-primary btn-login">
                     <i class="fas fa-sign-in-alt"></i> Login
                 </button>
                 
-                <div id="login-error" style="color: #ef4444; margin-top: 15px; display: none;">
+                <div id="login-error" class="error-message" style="display: none;">
                     Invalid email or password
                 </div>
             </form>
             
-            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                <p style="color: #999; font-size: 0.9rem; text-align: center;">
-                    <strong>Default Admin Credentials:</strong><br>
-                    Email: eyakemabi@gmail.com<br>
-                    Password: @Eyu26042604
-                </p>
+            <div class="login-footer">
+                <p><strong>Default Admin Credentials:</strong></p>
+                <p>Email: eyakemabi@gmail.com</p>
+                <p>Password: @Eyu26042604</p>
             </div>
         </div>
     </div>
 
-    <!-- Admin Dashboard (Hidden until login) -->
-    <div id="admin-dashboard" class="admin-dashboard">
-        <!-- Admin dashboard content will be loaded here after login -->
+    <!-- Admin Dashboard -->
+    <div id="admin-dashboard" style="display: none;">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <div class="admin-welcome">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Welcome, Admin</span>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <button id="logout-btn" class="btn btn-outline">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+
+        <!-- Admin Main Content -->
+        <main class="admin-main-content">
+            <div class="admin-page-header">
+                <h1><i class="fas fa-tachometer-alt"></i> Dashboard Overview</h1>
+                <p>Welcome to the Abbay TV Ethiopia Admin Panel</p>
+            </div>
+            
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="total-news">0</h3>
+                        <p>Total News Articles</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="total-programs">0</h3>
+                        <p>Total Programs</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="total-jobs">0</h3>
+                        <p>Active Job Listings</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="total-messages">0</h3>
+                        <p>Unread Messages</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quick-actions">
+                <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="showForm('news')">
+                        <i class="fas fa-plus"></i> Add News
+                    </button>
+                    <button class="btn btn-primary" onclick="showForm('program')">
+                        <i class="fas fa-plus"></i> Add Program
+                    </button>
+                    <button class="btn btn-primary" onclick="showForm('job')">
+                        <i class="fas fa-plus"></i> Add Job
+                    </button>
+                    <button class="btn btn-primary" onclick="updateAnnouncement()">
+                        <i class="fas fa-bullhorn"></i> Set Announcement
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Add News Form -->
+            <div id="news-form" class="form-container" style="display: none;">
+                <h3><i class="fas fa-plus"></i> Add News Article</h3>
+                <form id="add-news-form">
+                    <input type="text" placeholder="Title" required>
+                    <textarea placeholder="Description" required></textarea>
+                    <input type="text" placeholder="YouTube URL">
+                    <select>
+                        <option value="">Select Category</option>
+                        <option>Politics</option>
+                        <option>Business</option>
+                        <option>Sports</option>
+                    </select>
+                    <select>
+                        <option value="">Select Section</option>
+                        <option>National</option>
+                        <option>International</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Publish</button>
+                </form>
+            </div>
+            
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <h2><i class="fas fa-history"></i> Recent Activity</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <i class="fas fa-newspaper"></i>
+                        <div>
+                            <p>New article published: "Ethiopia Economic Reform"</p>
+                            <span>2 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <i class="fas fa-user"></i>
+                        <div>
+                            <p>New message from: john@example.com</p>
+                            <span>4 hours ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
 
-    <script src="main.js"></script>
     <script>
-        // Simple admin login
+        // Admin login functionality
         document.getElementById('login-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const email = document.getElementById('admin-email').value;
             const password = document.getElementById('admin-password').value;
             
+            // Default credentials
             if (email === 'eyakemabi@gmail.com' && password === '@Eyu26042604') {
-                // Store login state
+                // Store session
                 localStorage.setItem('abbaytv_admin', 'true');
                 
-                // Show admin dashboard
+                // Show dashboard
                 document.getElementById('login-screen').style.display = 'none';
                 document.getElementById('admin-dashboard').style.display = 'block';
                 
-                // Load admin interface
-                loadAdminDashboard();
+                // Load dashboard data
+                loadDashboardData();
             } else {
                 document.getElementById('login-error').style.display = 'block';
             }
+        });
+        
+        // Logout functionality
+        document.getElementById('logout-btn')?.addEventListener('click', function() {
+            localStorage.removeItem('abbaytv_admin');
+            location.reload();
         });
         
         // Check if already logged in
         if (localStorage.getItem('abbaytv_admin') === 'true') {
             document.getElementById('login-screen').style.display = 'none';
             document.getElementById('admin-dashboard').style.display = 'block';
-            loadAdminDashboard();
+            loadDashboardData();
         }
         
-        function loadAdminDashboard() {
-            // Load admin dashboard content
-            document.getElementById('admin-dashboard').innerHTML = `
-                <div class="top-bar">
-                    <div class="top-bar-left">
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <i class="fas fa-user-shield" style="color: #d4af37;"></i>
-                            <span>Admin Dashboard</span>
-                        </div>
-                    </div>
-                    <div class="top-bar-right">
-                        <button onclick="logoutAdmin()" class="btn btn-outline">
-                            <i class="fas fa-sign-out-alt"></i> Logout
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="main-content" style="margin-left: 0; margin-top: 70px;">
-                    <div class="page-header">
-                        <h1><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h1>
-                        <p>Manage Abbay TV Ethiopia website content</p>
-                    </div>
-                    
-                    <div class="dashboard-stats">
-                        <div class="stat-card">
-                            <i class="fas fa-newspaper"></i>
-                            <div>
-                                <h3 id="total-news">0</h3>
-                                <p>News Articles</p>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-film"></i>
-                            <div>
-                                <h3 id="total-programs">0</h3>
-                                <p>TV Programs</p>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-briefcase"></i>
-                            <div>
-                                <h3 id="total-jobs">0</h3>
-                                <p>Job Listings</p>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h3 id="total-messages">0</h3>
-                                <p>Messages</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="background: var(--dark-gray); padding: 30px; border-radius: 10px; margin-top: 30px;">
-                        <h2 style="margin-bottom: 20px; color: #d4af37;">Quick Actions</h2>
-                        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                            <button onclick="manageContent('news')" class="btn btn-primary">
-                                <i class="fas fa-newspaper"></i> Manage News
-                            </button>
-                            <button onclick="manageContent('programs')" class="btn btn-primary">
-                                <i class="fas fa-film"></i> Manage Programs
-                            </button>
-                            <button onclick="manageContent('jobs')" class="btn btn-primary">
-                                <i class="fas fa-briefcase"></i> Manage Jobs
-                            </button>
-                            <button onclick="manageContent('messages')" class="btn btn-primary">
-                                <i class="fas fa-envelope"></i> View Messages
-                            </button>
-                            <button onclick="updateAnnouncement()" class="btn btn-primary">
-                                <i class="fas fa-bullhorn"></i> Update Announcement
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            // Load admin statistics
-            loadAdminStatistics();
-        }
-        
-        function logoutAdmin() {
-            localStorage.removeItem('abbaytv_admin');
-            location.reload();
-        }
-        
-        async function loadAdminStatistics() {
-            // This would fetch actual statistics from Supabase
-            // For now, we'll set placeholder values
+        function loadDashboardData() {
+            // Set placeholder stats
             document.getElementById('total-news').textContent = '12';
             document.getElementById('total-programs').textContent = '8';
             document.getElementById('total-jobs').textContent = '5';
             document.getElementById('total-messages').textContent = '3';
         }
         
-        function manageContent(type) {
-            alert(`Manage ${type} - This feature would open a full CRUD interface`);
+        function showForm(type) {
+            // Hide all forms first
+            document.querySelectorAll('.form-container').forEach(form => {
+                form.style.display = 'none';
+            });
+            
+            // Show specific form
+            document.getElementById(type + '-form').style.display = 'block';
         }
         
         function updateAnnouncement() {
             const message = prompt('Enter new announcement:');
             if (message) {
-                alert(`Announcement updated to: "${message}"`);
+                alert('Announcement updated to: ' + message);
+                // In production, this would update Supabase
             }
         }
     </script>
+    <style>
+        /* Admin specific styles */
+        #login-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        
+        .login-container {
+            background: var(--dark-gray);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .login-logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+        
+        .login-form {
+            margin: 30px 0;
+        }
+        
+        .login-footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        .admin-main-content {
+            padding: 30px;
+        }
+        
+        .form-container {
+            background: var(--dark-gray);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: var(--dark-gray);
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
 </body>
 </html>

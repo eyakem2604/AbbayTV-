@@ -14,9 +14,7 @@
     <div class="top-bar">
         <div class="top-bar-left">
             <div class="hamburger-menu">
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
+                <i class="fas fa-bars"></i>
             </div>
             <div class="search-container">
                 <i class="fas fa-search"></i>
@@ -77,6 +75,12 @@
                     <span>Contact</span>
                 </a>
             </li>
+            <li class="nav-item admin-link">
+                <a href="admin.html">
+                    <i class="fas fa-lock"></i>
+                    <span>Admin</span>
+                </a>
+            </li>
         </ul>
         
         <div class="sidebar-footer">
@@ -97,6 +101,7 @@
             <li><a href="programs.html"><i class="fas fa-film"></i> Programs</a></li>
             <li><a href="jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
             <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
         </ul>
     </div>
 
@@ -113,13 +118,13 @@
                 <h2><i class="fas fa-broadcast-tower"></i> Now Streaming Live</h2>
                 <div class="live-player">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/live_stream?channel=UC" frameborder="0" allowfullscreen></iframe>
+                        <iframe id="main-live-stream" src="https://www.youtube.com/embed/live_stream?channel=UC" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="live-player-info">
                         <h3>Abbay TV Live Broadcast</h3>
                         <p>24/7 live broadcast from Ethiopia</p>
                         <div class="live-stats">
-                            <span><i class="fas fa-eye"></i> 2.5K watching</span>
+                            <span><i class="fas fa-eye"></i> <span id="viewer-count">2.5K</span> watching</span>
                             <span><i class="fas fa-clock"></i> Live Now</span>
                         </div>
                     </div>
