@@ -1,11 +1,50 @@
 [
   {
     "id": 1,
-    "title": "Test News",
-    "description": "This is a test",
-    "category": "Test",
+    "title": "Abbay TV Launches New Morning News Program",
+    "description": "Abbay TV proudly announces the launch of 'Ethiopian Morning', a comprehensive half-day news program covering the latest developments across Ethiopia. The program will air daily from 6 AM to 12 PM, featuring breaking news, in-depth analysis, weather updates, and interviews with key figures.",
+    "category": "News",
     "date": "2024-01-20",
-    "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "is_featured": true
+    "image_url": "https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    "youtube_url": "https://youtu.be/qfZcRBvue-c?si=VY7eEgsUJ-w_z3mx",
+    "is_featured": true,
+    "author": "Abbay TV News Team",
+    "read_time": "5 min"
+  },
+  {
+    "id": 2,
+    "title": "Ethiopia Signs New Trade Agreement",
+    "description": "The Ethiopian government has signed a landmark trade agreement with Kenya, Sudan, and Djibouti to enhance regional economic cooperation.",
+    "category": "Politics",
+    "date": "2024-01-19",
+    "image_url": "https://images.unsplash.com/photo-1551135049-8a33b2d8aeda?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    "youtube_url": "https://youtu.be/dQw4w9WgXcQ",
+    "is_featured": true,
+    "author": "Political Desk",
+    "read_time": "4 min"
+  },
+  {
+    "id": 3,
+    "title": "Ethiopian Athletes Prepare for Championships",
+    "description": "Ethiopian long-distance runners are intensifying their training ahead of the upcoming African Athletics Championships.",
+    "category": "Sports",
+    "date": "2024-01-18",
+    "image_url": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    "youtube_url": "https://youtu.be/9bZkp7q19f0",
+    "is_featured": false,
+    "author": "Sports Department",
+    "read_time": "3 min"
+  },
+  {
+    "id": 4,
+    "title": "New Ethiopian Film Wins International Award",
+    "description": "The Ethiopian movie 'እስከ መጨረሻው' has won the Best Foreign Language Film award at the Dubai International Film Festival.",
+    "category": "Entertainment",
+    "date": "2024-01-17",
+    "image_url": "https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    "youtube_url": "https://youtu.be/L_jWHffIx5E",
+    "is_featured": true,
+    "author": "Entertainment Desk",
+    "read_time": "4 min"
   }
 ]

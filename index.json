@@ -1,0 +1,76 @@
+{
+  "site_info": {
+    "name": "Abbay TV Ethiopia",
+    "description": "Ethiopia's Premier Television Network - News, Entertainment, and Culture",
+    "version": "2.0",
+    "last_updated": "2024-01-20",
+    "language": "Amharic/English",
+    "base_url": "https://abbaytv.et"
+  },
+  
+  "content_files": {
+    "news": "news.json",
+    "programs": "programs.json",
+    "live": "live.json",
+    "jobs": "jobs.json",
+    "messages": "messages.json"
+  },
+  
+  "stats": {
+    "news_count": 4,
+    "programs_count": 4,
+    "live_streams_count": 3,
+    "active_jobs_count": 3,
+    "messages_count": 3,
+    "youtube_videos_count": 8
+  },
+  
+  "categories": {
+    "news": ["Politics", "Sports", "Entertainment", "News"],
+    "programs": ["News", "Documentary", "Talk Show", "Sports"],
+    "job_types": ["Full-time", "Remote"],
+    "locations": ["Addis Ababa", "Remote"]
+  },
+  
+  "social_media": {
+    "youtube": "https://youtube.com/@abbaytv",
+    "facebook": "https://facebook.com/abbaytv",
+    "telegram": "https://t.me/abbaytv",
+    "twitter": "https://twitter.com/abbaytv"
+  },
+  
+  "contact_info": {
+    "email": "info@abbaytv.et",
+    "phone": "+251-11-123-4567",
+    "address": "Addis Ababa, Ethiopia",
+    "careers_email": "careers@abbaytv.et"
+  },
+  
+  "youtube_info": {
+    "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+    "live_stream_url": "https://www.youtube.com/embed/live_stream?channel=UC_x5XG1OV2P6uZZ5FSM9Ttw",
+    "sample_videos": [
+      "https://youtu.be/qfZcRBvue-c",
+      "https://youtu.be/dQw4w9WgXcQ",
+      "https://youtu.be/9bZkp7q19f0",
+      "https://youtu.be/L_jWHffIx5E",
+      "https://youtu.be/7wtfhZwyrcc",
+      "https://youtu.be/LDU_Txk06tM"
+    ]
+  },
+  
+  "featured_content": {
+    "featured_news": [1, 2, 4],
+    "featured_programs": [1, 2],
+    "current_live": 1,
+    "urgent_jobs": [1, 2]
+  },
+  
+  "settings": {
+    "items_per_page": 6,
+    "auto_refresh_interval": 60,
+    "default_language": "am",
+    "timezone": "Africa/Addis_Ababa",
+    "date_format": "YYYY-MM-DD"
+  }
+}

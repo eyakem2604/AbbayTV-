@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abbay TV Ethiopia - Home</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="general.css">
-    <link rel="icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
 </head>
 <body>
     <!-- Top Bar -->
@@ -30,78 +32,39 @@
         </div>
     </div>
 
-    <!-- Sidebar Navigation -->
+    <!-- Sidebar -->
     <nav class="sidebar">
         <div class="logo-section">
             <img src="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png" alt="Abbay TV Logo" class="logo">
-            <h1>Abbay TV</h1>
-            <p>Ethiopia</p>
+            <h1>Abbay TV Ethiopia</h1>
+            <p>የኢትዮጵያ የቴሌቪዥን ጣቢያ</p>
         </div>
-        
         <ul class="nav-menu">
-            <li class="nav-item active">
-                <a href="index.html">
-                    <i class="fas fa-home"></i>
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="live.html">
-                    <i class="fas fa-tv"></i>
-                    <span>Live</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="news.html">
-                    <i class="fas fa-newspaper"></i>
-                    <span>News</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="programs.html">
-                    <i class="fas fa-film"></i>
-                    <span>Programs</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="jobs.html">
-                    <i class="fas fa-briefcase"></i>
-                    <span>Jobs</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="contact.html">
-                    <i class="fas fa-envelope"></i>
-                    <span>Contact</span>
-                </a>
-            </li>
-            <li class="nav-item admin-link">
-                <a href="admin.html">
-                    <i class="fas fa-lock"></i>
-                    <span>Admin</span>
-                </a>
-            </li>
+            <li class="nav-item active"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li class="nav-item"><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
+            <li class="nav-item"><a href="programs.html"><i class="fas fa-tv"></i> Programs</a></li>
+            <li class="nav-item"><a href="live.html"><i class="fas fa-satellite-dish"></i> Live TV</a></li>
+            <li class="nav-item"><a href="jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
+            <li class="nav-item"><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
-        
         <div class="sidebar-footer">
             <p>© 2024 Abbay TV Ethiopia</p>
-            <p>All rights reserved</p>
+            <p>All Rights Reserved</p>
         </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Mobile Menu -->
     <div class="mobile-menu-overlay">
         <div class="mobile-menu-close">
             <i class="fas fa-times"></i>
         </div>
         <ul class="mobile-nav-menu">
             <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="live.html"><i class="fas fa-tv"></i> Live</a></li>
             <li><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
-            <li><a href="programs.html"><i class="fas fa-film"></i> Programs</a></li>
+            <li><a href="programs.html"><i class="fas fa-tv"></i> Programs</a></li>
+            <li><a href="live.html"><i class="fas fa-satellite-dish"></i> Live TV</a></li>
             <li><a href="jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
             <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
         </ul>
     </div>
 
@@ -111,79 +74,113 @@
         <section class="hero-section">
             <div class="hero-overlay">
                 <div class="hero-content">
-                    <h1 class="hero-title">Welcome to Abbay TV Ethiopia</h1>
-                    <p class="hero-subtitle">Your trusted source for news, entertainment, and opportunities</p>
+                    <h1 class="hero-title animate-fade-in">Abbay TV Ethiopia</h1>
+                    <p class="hero-subtitle">የኢትዮጵያ የቴሌቪዥን ጣቢያ</p>
                     <div class="hero-buttons">
-                        <a href="live.html" class="btn btn-primary">Watch Live</a>
-                        <a href="news.html" class="btn btn-outline">Latest News</a>
+                        <a href="live.html" class="btn btn-primary">
+                            <i class="fas fa-play-circle"></i> Watch Live
+                        </a>
+                        <a href="news.html" class="btn btn-outline">
+                            <i class="fas fa-newspaper"></i> Latest News
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Latest News -->
+        <!-- Featured News (LOADED FROM news.json where is_featured=true) -->
         <section class="content-section">
             <div class="section-header">
-                <h2><i class="fas fa-newspaper"></i> Latest News</h2>
+                <h2><i class="fas fa-star"></i> Featured News</h2>
                 <a href="news.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="cards-grid" id="latest-news">
+            <div class="cards-grid" id="featured-news">
+                <!-- Content loaded from news.json -->
                 <div class="loading-spinner"></div>
             </div>
         </section>
 
-        <!-- Featured Programs -->
+        <!-- Popular Programs (LOADED FROM programs.json - latest 4) -->
         <section class="content-section">
             <div class="section-header">
-                <h2><i class="fas fa-film"></i> Featured Programs</h2>
+                <h2><i class="fas fa-fire"></i> Popular Programs</h2>
                 <a href="programs.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="cards-grid" id="featured-programs">
+            <div class="cards-grid" id="popular-programs">
+                <!-- Content loaded from programs.json -->
                 <div class="loading-spinner"></div>
             </div>
         </section>
 
-        <!-- Job Opportunities -->
+        <!-- Live Now (LOADED FROM live.json where is_live=true) -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-circle"></i> Live Now</h2>
+                <a href="live.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="cards-grid" id="live-now">
+                <!-- Content loaded from live.json -->
+                <div class="loading-spinner"></div>
+            </div>
+        </section>
+
+        <!-- Job Highlights (LOADED FROM jobs.json - latest 3) -->
         <section class="content-section">
             <div class="section-header">
                 <h2><i class="fas fa-briefcase"></i> Job Opportunities</h2>
                 <a href="jobs.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
             </div>
+            <div class="job-statistics">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <h3 id="job-count">0</h3>
+                        <p>Open Positions</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Addis Ababa</h3>
+                        <p>Main Location</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3 id="urgent-jobs">0</h3>
+                        <p>Urgent Hiring</p>
+                    </div>
+                </div>
+            </div>
             <div class="cards-grid" id="job-highlights">
+                <!-- Content loaded from jobs.json -->
                 <div class="loading-spinner"></div>
             </div>
         </section>
     </main>
 
-    <!-- Floating Contact Button -->
-    <a href="contact.html" class="floating-contact-btn">
-        <i class="fas fa-envelope"></i>
-        <span>Contact Us</span>
-    </a>
-
     <!-- Video Modal -->
     <div class="modal-overlay" id="video-modal">
-        <div class="modal-content video-modal">
+        <div class="modal-content">
             <div class="modal-header">
                 <h3 id="video-title"></h3>
                 <button class="modal-close"><i class="fas fa-times"></i></button>
             </div>
             <div class="modal-body">
                 <div class="video-container">
-                    <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="video-player" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Floating Contact Button -->
+    <a href="contact.html" class="floating-contact-btn">
+        <i class="fas fa-comment-alt"></i>
+        <span>Contact Us</span>
+    </a>
+
     <script src="main.js"></script>
-    <script>
-        // Load homepage data
-        document.addEventListener('DOMContentLoaded', function() {
-            loadLatestNews(4);
-            loadFeaturedPrograms(4);
-            loadJobHighlights(3);
-        });
-    </script>
 </body>
 </html>
