@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "YeAbbay Serawit",
+    "description": "Daily news analysis and political commentary show featuring expert guests and in-depth discussions on current affairs affecting Ethiopia and the Horn of Africa.",
+    "category": "News",
+    "episode": "45",
+    "air_date": "2024-01-20",
+    "image_url": "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=800",
+    "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "duration": "60"
+  },
+  {
+    "id": 2,
+    "name": "Ethiopian Idol",
+    "description": "Music competition showcasing Ethiopia's best vocal talent. Weekly episodes feature performances, judge commentary, and audience voting.",
+    "category": "Entertainment",
+    "episode": "12",
+    "air_date": "2024-01-19",
+    "image_url": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800",
+    "youtube_url": "https://www.youtube.com/watch?v=9bZkp7q19f0",
+    "duration": "120"
+  },
+  {
+    "id": 3,
+    "name": "Zemen",
+    "description": "Historical drama series set in the medieval Ethiopian empire. Follows the lives of royalty, warriors, and common people during a turbulent period.",
+    "category": "Drama",
+    "episode": "23",
+    "air_date": "2024-01-18",
+    "image_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+    "youtube_url": "https://www.youtube.com/watch?v=JRH70a4l-Mo",
+    "duration": "45"
+  },
+  {
+    "id": 4,
+    "name": "Science & Innovation",
+    "description": "Weekly show exploring technological advancements and scientific discoveries in Ethiopia. Features interviews with researchers and demonstrations.",
+    "category": "Documentary",
+    "episode": "8",
+    "air_date": "2024-01-17",
+    "image_url": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800",
+    "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "duration": "30"
+  },
+  {
+    "id": 5,
+    "name": "Comedy Hour",
+    "description": "Stand-up comedy featuring Ethiopia's top comedians. Each episode features multiple comedians performing their best material.",
+    "category": "Comedy",
+    "episode": "15",
+    "air_date": "2024-01-16",
+    "image_url": "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=800",
+    "youtube_url": "https://www.youtube.com/watch?v=9bZkp7q19f0",
+    "duration": "45"
+  },
+  {
+    "id": 6,
+    "name": "Health Today",
+    "description": "Medical information program featuring doctors and health experts discussing common health issues, prevention, and treatment options.",
+    "category": "Health",
+    "episode": "10",
+    "air_date": "2024-01-15",
+    "image_url": "https://images.unsplash.com/photo-1516549655669-df6654e435de?w=800",
+    "youtube_url": "https://www.youtube.com/watch?v=JRH70a4l-Mo",
+    "duration": "30"
+  }
+]

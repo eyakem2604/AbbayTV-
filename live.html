@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Stream - Abbay TV Ethiopia</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Abbay TV Ethiopia - Live TV</title>
     <link rel="stylesheet" href="general.css">
-    <link rel="icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png">
 </head>
 <body>
     <!-- Top Bar -->
@@ -24,192 +26,147 @@
         <div class="top-bar-right">
             <div class="admin-announcement">
                 <i class="fas fa-bullhorn"></i>
-                <span id="announcement-text">Welcome to Abbay TV Ethiopia</span>
+                <span id="announcement-text">Watch live on Abbay TV</span>
             </div>
             <img src="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png" alt="Abbay TV Logo" class="top-logo">
         </div>
     </div>
 
-    <!-- Sidebar Navigation -->
+    <!-- Sidebar -->
     <nav class="sidebar">
         <div class="logo-section">
             <img src="https://bbjlfleaksumwtimzdim.supabase.co/storage/v1/object/public/image/abbay-logo-gold.png" alt="Abbay TV Logo" class="logo">
-            <h1>Abbay TV</h1>
-            <p>Ethiopia</p>
+            <h1>Abbay TV Ethiopia</h1>
+            <p>የኢትዮጵያ የቴሌቪዥን ጣቢያ</p>
         </div>
-        
         <ul class="nav-menu">
-            <li class="nav-item">
-                <a href="index.html">
-                    <i class="fas fa-home"></i>
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="nav-item active">
-                <a href="live.html">
-                    <i class="fas fa-tv"></i>
-                    <span>Live</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="news.html">
-                    <i class="fas fa-newspaper"></i>
-                    <span>News</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="programs.html">
-                    <i class="fas fa-film"></i>
-                    <span>Programs</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="jobs.html">
-                    <i class="fas fa-briefcase"></i>
-                    <span>Jobs</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="contact.html">
-                    <i class="fas fa-envelope"></i>
-                    <span>Contact</span>
-                </a>
-            </li>
-            <li class="nav-item admin-link">
-                <a href="admin.html">
-                    <i class="fas fa-lock"></i>
-                    <span>Admin</span>
-                </a>
-            </li>
+            <li class="nav-item"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li class="nav-item"><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
+            <li class="nav-item"><a href="programs.html"><i class="fas fa-tv"></i> Programs</a></li>
+            <li class="nav-item active"><a href="live.html"><i class="fas fa-satellite-dish"></i> Live TV</a></li>
+            <li class="nav-item"><a href="jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
+            <li class="nav-item"><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
-        
         <div class="sidebar-footer">
             <p>© 2024 Abbay TV Ethiopia</p>
-            <p>All rights reserved</p>
+            <p>All Rights Reserved</p>
         </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Mobile Menu -->
     <div class="mobile-menu-overlay">
         <div class="mobile-menu-close">
             <i class="fas fa-times"></i>
         </div>
         <ul class="mobile-nav-menu">
             <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="live.html" class="active"><i class="fas fa-tv"></i> Live</a></li>
             <li><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
-            <li><a href="programs.html"><i class="fas fa-film"></i> Programs</a></li>
+            <li><a href="programs.html"><i class="fas fa-tv"></i> Programs</a></li>
+            <li><a href="live.html" class="active"><i class="fas fa-satellite-dish"></i> Live TV</a></li>
             <li><a href="jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
             <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
         </ul>
     </div>
 
     <!-- Main Content -->
     <main class="main-content">
+        <!-- Page Header -->
         <div class="page-header">
-            <h1><i class="fas fa-tv"></i> Live Stream</h1>
-            <p>Watch our live broadcasts and recorded live sessions</p>
+            <h1><i class="fas fa-satellite-dish"></i> Live TV</h1>
+            <p>All content loaded from <code>live.json</code> file</p>
         </div>
 
-        <!-- Main Live Player -->
-        <div class="live-stream-section">
-            <div class="live-player-container">
-                <h2><i class="fas fa-broadcast-tower"></i> Now Streaming Live</h2>
-                <div class="live-player">
-                    <div class="video-container">
-                        <iframe id="main-live-stream" src="https://www.youtube.com/embed/live_stream?channel=UC" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="live-player-info">
-                        <h3>Abbay TV Live Broadcast</h3>
-                        <p>24/7 live broadcast from Ethiopia</p>
-                        <div class="live-stats">
-                            <span><i class="fas fa-eye"></i> <span id="viewer-count">2.5K</span> watching</span>
-                            <span><i class="fas fa-clock"></i> Live Now</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Past Streams -->
+        <!-- Live Now Section -->
         <section class="content-section">
             <div class="section-header">
-                <h2><i class="fas fa-history"></i> Past Live Streams</h2>
+                <h2><i class="fas fa-circle live-indicator"></i> Live Now</h2>
+                <span id="live-now-count" class="view-all">Loading...</span>
             </div>
-
-            <!-- Filter Controls -->
-            <div class="filter-section">
-                <div class="filter-group">
-                    <label for="search-input"><i class="fas fa-search"></i> Search:</label>
-                    <input type="text" id="search-input" placeholder="Search streams...">
-                </div>
-                
-                <div class="filter-group">
-                    <label for="sort-filter"><i class="fas fa-sort"></i> Sort by:</label>
-                    <select id="sort-filter">
-                        <option value="date_desc">Latest First</option>
-                        <option value="date_asc">Oldest First</option>
-                    </select>
-                </div>
-                
-                <button id="apply-filters" class="btn btn-primary">
-                    <i class="fas fa-check"></i> Apply
-                </button>
-                <button id="reset-filters" class="btn btn-outline">
-                    <i class="fas fa-redo"></i> Reset
-                </button>
-            </div>
-
-            <!-- Streams Grid -->
-            <div class="cards-grid" id="streams-grid">
+            <div class="cards-grid" id="live-streams">
+                <!-- Live streams loaded from live.json where is_live=true -->
                 <div class="loading-spinner"></div>
             </div>
+        </section>
 
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div class="filter-group">
+                <label for="stream-filter"><i class="fas fa-filter"></i> Stream Type</label>
+                <select id="stream-filter">
+                    <option value="all">All Streams</option>
+                    <option value="live">Live Now</option>
+                    <option value="upcoming">Upcoming</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="sort-filter"><i class="fas fa-sort"></i> Sort By</label>
+                <select id="sort-filter">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="az">A-Z</option>
+                    <option value="za">Z-A</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>&nbsp;</label>
+                <button id="reset-filters" class="btn btn-outline" style="width: 100%;">
+                    <i class="fas fa-redo"></i> Reset Filters
+                </button>
+            </div>
+        </div>
+
+        <!-- All Streams -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-calendar-alt"></i> All Streams</h2>
+                <span id="streams-count" class="view-all">Loading...</span>
+            </div>
+            <div class="cards-grid" id="streams-grid">
+                <!-- ALL stream cards loaded from live.json -->
+                <div class="loading-spinner"></div>
+            </div>
+            
             <!-- Load More -->
             <div class="load-more-container">
-                <button id="load-more" class="btn btn-outline">
-                    <i class="fas fa-plus"></i> Load More
-                </button>
+                <!-- Load more button appears here -->
             </div>
         </section>
     </main>
 
-    <!-- Floating Contact Button -->
-    <a href="contact.html" class="floating-contact-btn">
-        <i class="fas fa-envelope"></i>
-        <span>Contact Us</span>
-    </a>
-
     <!-- Video Modal -->
     <div class="modal-overlay" id="video-modal">
-        <div class="modal-content video-modal">
+        <div class="modal-content">
             <div class="modal-header">
                 <h3 id="video-title"></h3>
                 <button class="modal-close"><i class="fas fa-times"></i></button>
             </div>
             <div class="modal-body">
                 <div class="video-container">
-                    <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="video-player" width="100%" height="100%" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Floating Contact Button -->
+    <a href="contact.html" class="floating-contact-btn">
+        <i class="fas fa-comment-alt"></i>
+        <span>Contact Us</span>
+    </a>
+
+    <!-- Back to Top -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
     <script src="main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            loadLiveStreams();
-            
-            document.getElementById('apply-filters').addEventListener('click', loadLiveStreams);
-            document.getElementById('reset-filters').addEventListener('click', function() {
-                document.getElementById('search-input').value = '';
-                document.getElementById('sort-filter').value = 'date_desc';
-                loadLiveStreams();
-            });
-            
-            document.getElementById('load-more').addEventListener('click', loadMoreLiveStreams);
-        });
-    </script>
+    <style>
+        .live-indicator {
+            color: #ef4444;
+            animation: pulse 1s infinite;
+        }
+    </style>
 </body>
 </html>
