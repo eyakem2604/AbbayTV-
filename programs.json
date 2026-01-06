@@ -1,46 +1,35 @@
 [
   {
     "id": 1,
-    "name": "Ethiopian Morning News",
-    "description": "Daily morning news program covering breaking news, weather, and in-depth analysis from across Ethiopia.",
-    "category": "News",
-    "episode": "45",
-    "air_date": "2024-01-20",
-    "image_url": "https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    "youtube_url": "https://youtu.be/qfZcRBvue-c?si=VY7eEgsUJ-w_z3mx",
-    "duration": "60"
-  },
-  {
-    "id": 2,
-    "name": "Cultural Heritage Documentary",
-    "description": "Explore Ethiopia's rich cultural heritage, historical sites, and traditional practices.",
+    "name": "Kana Television - የኢትዮጵያ ታሪክ | History of Ethiopia Documentary",
+    "description": "This comprehensive documentary explores the rich history of Ethiopia, from ancient civilizations to modern times. Featuring archaeological discoveries, historical sites like Lalibela and Axum, and interviews with historians. The program covers the Aksumite Empire, Solomonic dynasty, Italian invasion, and Ethiopia's role in African independence movements.",
     "category": "Documentary",
-    "episode": "12",
-    "air_date": "2024-01-19",
+    "episode": "1",
+    "air_date": "2024-01-21",
     "image_url": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    "youtube_url": "https://youtu.be/7wtfhZwyrcc",
+    "youtube_url": "https://youtu.be/CiiC58zR3U8?si=UbxpsOFjqQNRVZRs",
     "duration": "45"
   },
   {
-    "id": 3,
-    "name": "Business Ethiopia",
-    "description": "Weekly business analysis program covering Ethiopian economy, investments, and market trends.",
-    "category": "Talk Show",
-    "episode": "28",
-    "air_date": "2024-01-18",
-    "image_url": "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    "youtube_url": "https://youtu.be/LDU_Txk06tM",
-    "duration": "30"
+    "id": 2,
+    "name": "EBS - ኢትዮጵያ የአለም ቁራጭ | Ethiopia World Piece Documentary",
+    "description": "A cultural documentary showcasing Ethiopia's unique position in world heritage. Features Ethiopian traditional music, dance forms, religious ceremonies, coffee ceremonies, and traditional clothing. The program highlights UNESCO World Heritage sites and Ethiopia's contributions to world civilization including coffee discovery and ancient Christian traditions.",
+    "category": "Cultural",
+    "episode": "7",
+    "air_date": "2024-01-20",
+    "image_url": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    "youtube_url": "https://youtu.be/5cE1GfNuw4k?si=YpK2CNfJKAWjPPKx",
+    "duration": "50"
   },
   {
-    "id": 4,
-    "name": "Sports Review Weekly",
-    "description": "Comprehensive review of Ethiopian sports achievements, athlete interviews, and upcoming events.",
-    "category": "Sports",
-    "episode": "15",
-    "air_date": "2024-01-17",
-    "image_url": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    "youtube_url": "https://youtu.be/9bZkp7q19f0",
-    "duration": "50"
+    "id": 3,
+    "name": "Ethiopian Airlines - Safety Video & Ethiopia Tourism",
+    "description": "Official Ethiopian Airlines safety demonstration video featuring stunning aerial views of Ethiopia's landscapes. The program showcases tourist attractions including Simien Mountains, Danakil Depression, Blue Nile Falls, and historical sites. Includes cultural performances and highlights Ethiopia as a premier tourism destination in Africa.",
+    "category": "Travel",
+    "episode": "Special",
+    "air_date": "2024-01-19",
+    "image_url": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    "youtube_url": "https://youtu.be/82SZfZhasPA?si=UyP2t1tLytRhGwGT",
+    "duration": "8"
   }
 ]
